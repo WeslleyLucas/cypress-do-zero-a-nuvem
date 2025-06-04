@@ -128,11 +128,15 @@ it('verifica a politica de privacidade do site', ()=> {
  cy.contains('a', 'Política de Privacidade').should('have.attr', 'target', '_blank')
 
 })
-it.only('abre pagina de politica de privacidade clicando', ()=>{
+it('abre pagina de politica de privacidade clicando', ()=>{
 cy.contains('a', 'Política de Privacidade').invoke('removeAttr', 'target').click()
 cy.contains('h1','CAC TAT - Política de Privacidade').should('be.visible')
 })
 
+it.only('encontre o gato', () => {
+  cy.get('#white-background').find("span[id='cat']")
+  .invoke('show').should('be.visible')
+})
 })
 
 
